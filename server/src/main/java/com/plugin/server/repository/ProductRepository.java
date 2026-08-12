@@ -19,7 +19,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             "FROM Product p")
     List<ProductCardDTO> allProductCards();
 
-    // SQL Query for finding products by slug
-    @Query("SELECT p FROM Product p WHERE p.slug = ?1")
-    Product findProductBySlug(String slug);
+    Product findBySlug(String slug);
+   
 }

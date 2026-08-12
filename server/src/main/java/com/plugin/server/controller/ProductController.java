@@ -15,7 +15,7 @@ import com.plugin.server.repository.ProductRepository;
 
 @RestController
 @RequestMapping("/products")
-@CrossOrigin(origins = "https://plug-in-ecommerce.vercel.app")
+@CrossOrigin(origins = { "http://localhost:5173", "https://plug-in-ecommerce.vercel.app" })
 
 public class ProductController {
 
@@ -37,7 +37,7 @@ public class ProductController {
     @GetMapping("/{slug}")
     public ResponseEntity<?> getProductsSummaryDTO(@PathVariable String slug) {
         try {
-            Product p = productRepository.findProductBySlug(slug);
+            Product p = productRepository.findBySlug(slug);
 
             if (p == null) {
                 return ResponseEntity.status(404).body("No se ha encontrado el producto" + slug);
