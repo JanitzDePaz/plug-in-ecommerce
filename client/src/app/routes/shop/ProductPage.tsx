@@ -19,8 +19,9 @@ export default function ProductPage() {
       const product: ShowProductDetailsProp = await getProductDetails(slug!);
       setProduct(product);
     };
-
+    
     fetchProduct();
+    console.log(product)
   }, [slug]);
 
   useEffect(() => {
@@ -46,7 +47,7 @@ export default function ProductPage() {
       <span className="flex justify-evenly flex-1 gap-5">
         <section className="flex flex-col gap-5 w-5/15">
           <img
-            src={`/public/${mainImg}`}
+            src={`${mainImg}`}
             alt={`Main img for ${product.name}`}
             className="w-full"
           />
