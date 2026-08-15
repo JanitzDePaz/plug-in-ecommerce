@@ -30,7 +30,8 @@ public class CartController {
             // return ResponseEntity.ok(res);
 
             List<CartProductDTO> test = new ArrayList<CartProductDTO>();
-            test.add(new CartProductDTO("Name", 212, "/products/monitors/AOC-Gaming-24G2SP/front.png", 1));
+            test.add(new CartProductDTO("Samsung Odyssey G5", 212, "/products/monitors/AOC-Gaming-24G2SP/front.png", 1));
+            test.add(new CartProductDTO("Dell UltraSharp U2723QE", 620.50, "/products/monitors/Dell-UltraSharp-U2723QE/front.png", 2));
             return ResponseEntity.ok(test);
 
         } catch (Exception e) {
