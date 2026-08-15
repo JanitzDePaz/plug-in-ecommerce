@@ -3,7 +3,6 @@ package com.plugin.server.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,9 +17,8 @@ import com.plugin.server.repository.ProductRepository;
 @RequestMapping("api/cart")
 @CrossOrigin(origins = { "http://localhost:5173", "https://plug-in-ecommerce.vercel.app" })
 public class CartController {
-    private final ProductRepository productRepository;
 
-    @Autowired
+    private final ProductRepository productRepository;
     public CartController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
