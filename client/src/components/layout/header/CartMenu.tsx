@@ -20,38 +20,62 @@ export const CartMenu = () => {
     };
     getData();
   }, [isLoaded, user]);
+
+  let totalAmount = 0;
+  let totalPrice = 0;
+
+  for (const prod of cartProducts) {
+    totalAmount += prod.amount;
+    totalPrice += prod.price;
+  }
+
   return (
-    <nav
+    <aside
       className={clsx(
-        "opacity-0 bg-white max-h-85vh] min-h-[70vh] overflow-y-scroll w-full md:min-w-[20vw] md:max-w-[30vw] absolute top-full right-0 border-2 border-black duration-200 z-1000 flex-center flex-col items-center gap-4",
+        "opacity-0 bg-white max-h-[85vh] min-h-[70vh] overflow-y-scroll w-full md:min-w-[20vw] md:max-w-[30vw] absolute top-full right-0 border-2 border-black duration-200 z-1000 flex-center flex-col items-center gap-4",
         cartMenu ? "translate-y-0 opacity-100" : "translate-x-full opacity-0",
       )}
     >
       <Show when="signed-in">
         <div
           className={clsx(
-            "flex",
+            "flex flex-col flex-1 w-full",
             cartProducts.length <= 0
               ? "justify-center items-center"
-              : "gap-3 p-10",
+              : "gap p-3",
           )}
         >
           {cartProducts.length <= 0 ? (
-            <p>No se han podido cargar los productos</p>
+            <p>El carrito aún esta vacio</p>
           ) : (
-            cartProducts.map((prod) => (
-              <article key={prod.name} className="flex flex-col">
-                <img
-                  src={prod.mainImg}
-                  alt={`${prod.name} image`}
-                  className="aspect-square border-2"
-                />
-                <div className="flex flex-col">
-                  <h3>{prod.name}</h3>
-                </div>
-              </article>
-            ))
+            cartProducts.map((prod) => {
+              return (
+                <article key={prod.name} className="flex gap-5 rounded-lg h-30">
+                  <img
+                    src={prod.mainImg}
+                    alt={`${prod.name} image`}
+                    className="aspect-square"
+                  />
+                  <div className="flex flex-col">
+                    <h3>{prod.name}</h3>
+                    <h4>{prod.price}€</h4>
+                    <h4>Unidades: {prod.amount}</h4>
+                  </div>
+                </article>
+              );
+            })
           )}
+          <div className="border-t border-dashed border-gray-400 py-5 px-10">
+            <div className="flex justify-between">
+              <h3>Unidades:</h3>
+              <h3>{totalAmount}</h3>
+            </div>
+
+            <div className="flex justify-between">
+              <h2>Precio total:</h2>
+              <h2 className="font-semibold text-xl">{totalPrice}€</h2>
+            </div>
+          </div>
         </div>
       </Show>
 
@@ -63,6 +87,6 @@ export const CartMenu = () => {
           </button>
         </SignInButton>
       </Show>
-    </nav>
+    </aside>
   );
 };
