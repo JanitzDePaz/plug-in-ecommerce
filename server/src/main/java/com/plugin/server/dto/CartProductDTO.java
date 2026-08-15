@@ -2,15 +2,15 @@ package com.plugin.server.dto;
 
 public class CartProductDTO {
     private String name;
-    private float price;
+    private double price;
     private String mainImg;
-    private int quantity;
+    private int amount;
 
-    public CartProductDTO(String name, float price, String mainImg, int quantity) {
+    public CartProductDTO(String name, double price, String mainImg, int amount) {
         this.name = name;
         this.price = price;
         this.mainImg = mainImg;
-        this.quantity = quantity;
+        this.amount = amount;
     }
 
     public String getName() {
@@ -25,7 +25,7 @@ public class CartProductDTO {
         return mainImg;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getAmount() {
+        return amount;
     }
 }
