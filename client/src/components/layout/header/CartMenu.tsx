@@ -26,7 +26,7 @@ export const CartMenu = () => {
 
   for (const prod of cartProducts) {
     totalAmount += prod.amount;
-    totalPrice += prod.price;
+    totalPrice += prod.price * prod.amount;
   }
 
   return (
@@ -87,7 +87,7 @@ export const CartMenu = () => {
 
                 <div className="flex justify-between">
                   <h2>Precio total:</h2>
-                  <h2 className="font-semibold text-xl">{totalPrice}€</h2>
+                  <h2 className="font-semibold text-xl">{totalPrice.toFixed(2)}€</h2>
                 </div>
               </div>
             </>
