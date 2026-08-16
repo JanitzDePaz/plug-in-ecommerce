@@ -9,6 +9,7 @@ import AddToCartIcon from "../../../assets/icons/shop/AddToCart.svg";
 import DeliveryTruck from "../../../assets/icons/shop/DeliveryTruck.svg";
 import { loading } from "src/animations/loadingAnimation";
 import { useCart } from "src/api/useCart";
+import { menuStorage } from "src/stores/menuStore";
 
 export default function ProductPage() {
   const { slug } = useParams();

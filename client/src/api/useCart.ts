@@ -1,6 +1,9 @@
 import { useAuth, useUser } from "@clerk/react";
+import { cartStorage} from "src/stores/menuStore";
 
 export const useCart = () => {
+
+  const { setCartProducts } = cartStorage()
   const { getToken } = useAuth();
   const { user, isLoaded } = useUser();
   const url = import.meta.env.VITE_API_URL;
@@ -35,10 +38,11 @@ export const useCart = () => {
         Authorization: `Bearer ${token}`,
       },
     });
-
     if (!res.ok) {
       throw new Error("No se pudo agregar el producto.");
     }
+
+    setCartProducts(await getProducts())
   };
 
   const delProduct = async (productId: number) => {

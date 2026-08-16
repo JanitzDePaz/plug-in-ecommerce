@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 import { useCart } from "src/api/useCart";
 
 export const CartMenu = () => {
-  const { cartMenu } = cartStorage();
-  const [cartProducts, setCartProducts] = useState<UserCartProducts[]>([]);
+  const { cartMenu, cartProducts, setCartProducts } = cartStorage();
   const { getProducts } = useCart();
   const { user, isLoaded } = useUser();
   useEffect(() => {
