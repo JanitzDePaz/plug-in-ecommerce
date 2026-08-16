@@ -12,8 +12,10 @@ type searchProp = {
 
 type cartProp = {
   cartMenu: boolean;
+  cartProducts: UserCartProducts[];
   toggleCart: () => void;
   closeCart: () => void;
+  setCartProducts: (products: UserCartProducts[]) => void;
 };
 
 type HeadsetColorProp = {

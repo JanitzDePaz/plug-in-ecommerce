@@ -15,8 +15,10 @@ export const searchStorage = create<searchProp>((set) => ({
 
 export const cartStorage = create<cartProp>((set) => ({
   cartMenu: false,
+  cartProducts: [],
   toggleCart: () => set((state) => ({ cartMenu: !state.cartMenu })),
   closeCart: () => ({ CartMenu: false }),
+  setCartProducts: (products) => set({ cartProducts: products })
 }));
 
 export const headsetColorControl = create<HeadsetColorProp>((set) => ({
