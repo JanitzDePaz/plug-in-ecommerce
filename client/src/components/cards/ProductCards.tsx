@@ -21,21 +21,23 @@ export const ProductCards = ({
           className="w-full aspect-square object-contain"
         />
         <p className="text-[0.9rem]">{name}</p>
-        <p className="text-[1.3rem] text-red-600 font-bold">
-          {discount == 0
-            ? `${price.toFixed(2)}€`
-            : `${(price - (price * discount) / 100).toFixed(2)}€`}
-        </p>
+        <div className="text-[1.3rem] font-bold flex justify-between">
+          <p>
+            {discount == 0
+              ? `${price.toFixed(2)}€`
+              : `${(price - (price * discount) / 100).toFixed(2)}€`}
+          </p>
+          <p className="text-red-600">{
+          discount == 0
+            ? ""
+            : `${discount}%`
+          }</p>
+        </div>
         <RateStars rate={rating} />
         <p className="text-sm text-gray-800 flex-1">
           Recíbelo a partir del <strong>{dayName}</strong> <br />
           {deliveryDays.getDate()} de {monthName}
         </p>
-        {discount == 0 ? null : (
-          <div className="flex-center items-center absolute left-2 top-2 bg-red-600 rounded-xl p-2 w-12">
-            <p className="font-bold">{`${discount}%`}</p>
-          </div>
-        )}
         {active ? null : (
           <div className="absolute inset-0 w-full h-full bg-gray-300 opacity-90 z-100 rounded-2xl flex-center items-center">
             <p className="text-2xl">Sin stock</p>
