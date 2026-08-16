@@ -1,9 +1,11 @@
 package com.plugin.server.controller;
+
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +16,8 @@ import com.plugin.server.dto.CartProductDTO;
 import com.plugin.server.model.CartItem;
 import com.plugin.server.repository.CartRepository;
 import com.plugin.server.repository.ProductRepository;
+
+import jakarta.transaction.Transactional;
 
 @RestController
 @RequestMapping("api/cart")
@@ -40,6 +44,7 @@ public class CartController {
     }
 
     @PostMapping("/{userId}/{productId}")
+    @Transactional
     public ResponseEntity<?> addProductsToCart(@PathVariable String userId, @PathVariable long productId) {
         try {
             Optional<CartItem> c = cartRepository.findByUserIdAndProductId(userId, productId);
@@ -58,6 +63,26 @@ public class CartController {
             }
         } catch (Exception e) {
             return ResponseEntity.status(500).body("No se ha podido agregar el producto al carrito");
+        }
+    }
+
+    @DeleteMapping("/{userId}/{productId}")
+    @Transactional
+    public ResponseEntity<?> delProductFromCart(@PathVariable String userId, @PathVariable long productId) {
+        try {
+            Optional<CartItem> c = cartRepository.findByUserIdAndProductId(userId, productId);
+
+            if (c.isEmpty()) {
+                throw new Exception("Error al eliminar el producto");
+            } else {
+                CartItem item = c.get();
+                cartRepository.delete(item);
+
+                return ResponseEntity.ok("Producto eliminado correctamente");
+            }
+
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Ha habido un error al eliminar el producto");
         }
     }
 

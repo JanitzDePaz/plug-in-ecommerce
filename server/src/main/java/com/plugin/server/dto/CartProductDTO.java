@@ -3,16 +3,22 @@ package com.plugin.server.dto;
 import java.math.BigDecimal;
 
 public class CartProductDTO {
+    private long productId;
     private String name;
     private BigDecimal price;
     private String mainImg;
     private int amount;
 
-    public CartProductDTO(String name, BigDecimal price, String mainImg, int amount) {
+    public CartProductDTO(long productId, String name, BigDecimal price, String mainImg, int amount) {
+        this.productId = productId;
         this.name = name;
         this.price = price;
         this.mainImg = mainImg;
         this.amount = amount;
+    }
+
+    public long getProductId(){
+        return productId;
     }
 
     public String getName() {

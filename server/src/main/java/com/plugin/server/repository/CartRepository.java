@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface CartRepository extends JpaRepository<CartItem, Long> {
-    @Query("SELECT new com.plugin.server.dto.CartProductDTO(p.name, p.price, p.mainImage, c.amount) FROM CartItem c JOIN Product p ON c.productId = p.id WHERE c.userId = :userId")
+    @Query("SELECT new com.plugin.server.dto.CartProductDTO(p.id, p.name, p.price, p.mainImage, c.amount) FROM CartItem c JOIN Product p ON c.productId = p.id WHERE c.userId = :userId")
     List<CartProductDTO> findCartProductsByUserId(@Param("userId") String userId);
 
     Optional<CartItem> findByUserIdAndProductId(String userId, Long productId);
