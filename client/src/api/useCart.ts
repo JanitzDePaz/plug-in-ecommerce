@@ -1,9 +1,8 @@
 import { useAuth, useUser } from "@clerk/react";
-import { cartStorage} from "src/stores/menuStore";
+import { cartStorage } from "src/stores/menuStore";
 
 export const useCart = () => {
-
-  const { setCartProducts } = cartStorage()
+  const { setCartProducts } = cartStorage();
   const { getToken } = useAuth();
   const { user, isLoaded } = useUser();
   const url = import.meta.env.VITE_API_URL;
@@ -42,7 +41,7 @@ export const useCart = () => {
       throw new Error("No se pudo agregar el producto.");
     }
 
-    setCartProducts(await getProducts())
+    setCartProducts(await getProducts());
   };
 
   const delProduct = async (productId: number) => {
@@ -59,6 +58,7 @@ export const useCart = () => {
     if (!res.ok) {
       throw new Error("No se pudo eliminar el producto.");
     }
+    setCartProducts(await getProducts());
   };
   return { getProducts, addProduct, delProduct };
 };
