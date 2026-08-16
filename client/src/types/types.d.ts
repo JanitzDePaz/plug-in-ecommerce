@@ -203,6 +203,7 @@ type ButtonProps = {
   text: string;
   customCSS: string;
   icon: string;
+  onClick?: () => void 
 };
 
 

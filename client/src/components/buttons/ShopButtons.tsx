@@ -4,6 +4,7 @@ export const ShopButtons = ({
   text,
   customCSS,
   icon,
+  onClick
 }: ButtonProps) => {
     const iconAlt = icon.split("/").pop()
   return (
@@ -14,6 +15,7 @@ export const ShopButtons = ({
         typeOfButton == "gray" && `py-2 px-4 border-2 border-gray-300 rounded-lg hover:bg-gray-100 duration-100`,
         customCSS
       )}
+      onClick={onClick}
     >
       {icon && <img src={icon} alt={iconAlt} className="w-1/10"></img>}
       <p>{text}</p>

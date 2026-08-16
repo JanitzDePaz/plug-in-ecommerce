@@ -8,9 +8,11 @@ import { ShopButtons } from "src/components/buttons/ShopButtons";
 import AddToCartIcon from "../../../assets/icons/shop/AddToCart.svg";
 import DeliveryTruck from "../../../assets/icons/shop/DeliveryTruck.svg";
 import { loading } from "src/animations/loadingAnimation";
+import { useCart } from "src/api/useCart";
 
 export default function ProductPage() {
   const { slug } = useParams();
+  const { addProduct } = useCart();
   const [product, setProduct] = useState<ShowProductDetailsProp | null>(null);
   const mainImg = productSummaryStorage((e) => e.mainImg);
   const changeMainImg = productSummaryStorage((e) => e.setMainImg);
@@ -32,13 +34,13 @@ export default function ProductPage() {
   }, [product, changeMainImg]);
 
   useEffect(() => {
-      if (!product) {
-        const loadingAni = loading("dot");
-        return () => {
-          loadingAni.kill();
-        };
-      }
-    }, [product]);
+    if (!product) {
+      const loadingAni = loading("dot");
+      return () => {
+        loadingAni.kill();
+      };
+    }
+  }, [product]);
 
   return (
     <main className="flex flex-col gap-5 justify-around min-h-[60vh] my-5 w-8/10 m-auto">
@@ -135,6 +137,7 @@ export default function ProductPage() {
                 text="Añadir al carrito"
                 customCSS=""
                 icon={`${AddToCartIcon}`}
+                onClick={() => addProduct(product.id)}
               />
             </section>
           </span>
