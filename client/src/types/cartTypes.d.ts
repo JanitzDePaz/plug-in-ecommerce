@@ -1,5 +1,5 @@
 type UserCartProducts = {
-  id: number;
+  productId: number;
   name: string;
   price: number;
   mainImg: string;
