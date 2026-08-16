@@ -1,7 +1,7 @@
 import { cartStorage } from "src/stores/menuStore";
 import clsx from "clsx";
 import { Show, SignInButton, useUser } from "@clerk/react";
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { useCart } from "src/api/useCart";
 import trashIcon from "../../../assets/icons/shop/TrashIcon.svg";
 
@@ -48,36 +48,50 @@ export const CartMenu = () => {
           {cartProducts.length <= 0 ? (
             <p>El carrito aún esta vacio</p>
           ) : (
-            cartProducts.map((prod) => {
-              console.log(prod)
-              return (
-                <article key={prod.name} className="flex gap-5 rounded-lg h-30">
-                  <img
-                    src={prod.mainImg}
-                    alt={`${prod.name} image`}
-                    className="aspect-square"
-                  />
-                  <div className="flex flex-col">
-                    <h3>{prod.name}</h3>
-                    <h4>{prod.price}€</h4>
-                    <h4>Unidades: {prod.amount}</h4>
-                    <button className="cursor-pointer" aria-label="Delete product"><img src={trashIcon} alt="Trash icon" onClick={() => delProduct(prod.productId)}/></button>
-                  </div>
-                </article>
-              );
-            })
-          )}
-          <div className="border-t border-dashed border-gray-400 py-5 px-10">
-            <div className="flex justify-between">
-              <h3>Unidades:</h3>
-              <h3>{totalAmount}</h3>
-            </div>
+            <>
+              {cartProducts.map((prod) => {
+                console.log(prod);
+                return (
+                  <article
+                    key={prod.name}
+                    className="flex gap-5 rounded-lg h-30"
+                  >
+                    <img
+                      src={prod.mainImg}
+                      alt={`${prod.name} image`}
+                      className="aspect-square"
+                    />
+                    <div className="flex flex-col">
+                      <h3>{prod.name}</h3>
+                      <h4>{prod.price}€</h4>
+                      <h4>Unidades: {prod.amount}</h4>
+                      <button
+                        className="cursor-pointer"
+                        aria-label="Delete product"
+                      >
+                        <img
+                          src={trashIcon}
+                          alt="Trash icon"
+                          onClick={() => delProduct(prod.productId)}
+                        />
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+              <div className="border-t border-dashed border-gray-400 py-5 px-10">
+                <div className="flex justify-between">
+                  <h3>Unidades:</h3>
+                  <h3>{totalAmount}</h3>
+                </div>
 
-            <div className="flex justify-between">
-              <h2>Precio total:</h2>
-              <h2 className="font-semibold text-xl">{totalPrice}€</h2>
-            </div>
-          </div>
+                <div className="flex justify-between">
+                  <h2>Precio total:</h2>
+                  <h2 className="font-semibold text-xl">{totalPrice}€</h2>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </Show>
 
