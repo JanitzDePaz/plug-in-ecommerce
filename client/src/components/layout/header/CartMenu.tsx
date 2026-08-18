@@ -7,8 +7,8 @@ import trashIcon from "../../../assets/icons/shop/TrashIcon.svg";
 import { ShopButtons } from "src/components/buttons/ShopButtons";
 
 export const CartMenu = () => {
-  const { cartMenu, cartProducts, setCartProducts, toggleCart} = cartStorage();
-  const { getProducts, delProduct } = useCart();
+  const { cartMenu, cartProducts, setCartProducts, toggleCart } = cartStorage();
+  const { getProducts, delProduct, cleanUpCart } = useCart();
   const { user, isLoaded } = useUser();
   useEffect(() => {
     const getData = async () => {
@@ -51,32 +51,29 @@ export const CartMenu = () => {
           ) : (
             <>
               {cartProducts.map((prod) => (
-                  <article
-                    key={prod.name}
-                    className="flex gap-5 rounded-lg h-30"
-                  >
-                    <img
-                      src={prod.mainImg}
-                      alt={`${prod.name} image`}
-                      className="aspect-square"
-                    />
-                    <div className="flex flex-col">
-                      <h3>{prod.name}</h3>
-                      <h4>{prod.price}€</h4>
-                      <h4>Unidades: {prod.amount}</h4>
-                      <button
-                        className="cursor-pointer"
-                        aria-label="Delete product"
-                      >
-                        <img
-                          src={trashIcon}
-                          alt="Trash icon"
-                          onClick={() => delProduct(prod.productId)}
-                        />
-                      </button>
-                    </div>
-                  </article>
-                ))}
+                <article key={prod.name} className="flex gap-5 rounded-lg h-30">
+                  <img
+                    src={prod.mainImg}
+                    alt={`${prod.name} image`}
+                    className="aspect-square"
+                  />
+                  <div className="flex flex-col">
+                    <h3>{prod.name}</h3>
+                    <h4>{prod.price}€</h4>
+                    <h4>Unidades: {prod.amount}</h4>
+                    <button
+                      className="cursor-pointer"
+                      aria-label="Delete product"
+                    >
+                      <img
+                        src={trashIcon}
+                        alt="Trash icon"
+                        onClick={() => delProduct(prod.productId)}
+                      />
+                    </button>
+                  </div>
+                </article>
+              ))}
               <div className="border-t border-dashed border-gray-400 py-5 px-10">
                 <div className="flex justify-between">
                   <h3>Unidades:</h3>
@@ -84,12 +81,21 @@ export const CartMenu = () => {
                 </div>
                 <div className="flex justify-between">
                   <h2>Precio total:</h2>
-                  <h2 className="font-semibold text-xl">{totalPrice.toFixed(2)}€</h2>
+                  <h2 className="font-semibold text-xl">
+                    {totalPrice.toFixed(2)}€
+                  </h2>
                 </div>
                 <div className="full flex justify-center pt-2">
-                   <button className="py-2 px-4 text-white text-lg bg-blue-500 rounded-lg hover:bg-blue-600 duration-100" onClick={() => toggleCart()}>Procesar compra</button>
+                  <button
+                    className="py-2 px-4 text-white text-lg bg-blue-500 rounded-lg hover:bg-blue-600 duration-100"
+                    onClick={() => {
+                      cleanUpCart();
+                      toggleCart();
+                    }}
+                  >
+                    Procesar compra
+                  </button>
                 </div>
-                
               </div>
             </>
           )}

@@ -86,6 +86,18 @@ public class CartController {
         }
     }
 
+    @DeleteMapping("/{userId}")
+    @Transactional
+    public ResponseEntity<?> cleanUpCart(@PathVariable String userId) {
+        try {
+            cartRepository.deleteAll();
+            return ResponseEntity.ok("Carrito limpiado correctamente");
+
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Ha habido un error al limpiar el carrito");
+        }
+    }
+
     public ProductRepository getProductRepository() {
         return productRepository;
     }

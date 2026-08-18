@@ -60,5 +60,22 @@ export const useCart = () => {
     }
     setCartProducts(await getProducts());
   };
-  return { getProducts, addProduct, delProduct };
+
+  const cleanUpCart = async () => {
+    if (!isLoaded || !user) {
+      throw new Error("Error al conectar conectar con el usuario.");
+    }
+    const token = await getToken();
+    const res = await fetch(`${url}/api/cart/${user.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (!res.ok) {
+      throw new Error("No se ha podido vaciar el carrito");
+    }
+    setCartProducts(await getProducts());
+  };
+  return { getProducts, addProduct, delProduct, cleanUpCart };
 };
