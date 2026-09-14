@@ -14,18 +14,13 @@ The project aims to deliver a complete full-stack solution built with a **React 
 - ⚛️ React
 - 🟦 TypeScript
 - 🎨 TailwindCSS
-- 🎞️ GSAP (scroll animations)
-- 🔀 React Router
-- ⚡ Vite
+- 🎞️ GSAP
 - 📦 Zustand (State Management)
 
 ## ⚙️ Backend
 
-- ☕ Java 17+
 - 🌱 Spring Boot
 - 🗄️ SQL (PostgreSQL)
-- 🔗 Spring Web
-- 📚 Spring Data JPA
 
 ## ☁️ Deployment
 
