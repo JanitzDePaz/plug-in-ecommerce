@@ -79,7 +79,7 @@ export const ShopMain = () => {
   }
 
   return (
-    <main
+    <section
       className={clsx(
         "w-full h-fit px-4 sm:px-6 lg:px-8",
         productData.length < 1
@@ -117,6 +117,6 @@ export const ShopMain = () => {
             )
         })
       )}
-    </main>
+    </section>
   );
 };
