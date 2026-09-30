@@ -36,7 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}
         >
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 flex flex-col">{children}</main>
           {hideFooter.current ? <Footer /> : <></>}
 
           <ScrollRestoration />
