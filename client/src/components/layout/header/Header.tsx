@@ -18,7 +18,9 @@ export default function Header() {
   return (
     <>
       <header className="flex-between items-center border-b-2 border-black max-h-[15vh] relative overflow-x-clip">
-        <img src={pluginLogo} alt="Logo icon" className="max-h-20"/>
+        <Link to="/">
+          <img src={pluginLogo} alt="Logo icon" className="max-h-20"/>
+        </Link>
         <nav className="hidden md:block">
           <ul className="flex md:gap-10 gap-5">
             {headerItems.map((item, i) => (
