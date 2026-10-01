@@ -39,18 +39,22 @@ export default function Contact() {
             <SocialMediaLink
               icon={<InstagramIcon className="w-7 h-7" />}
               href="https://www.instagram.com/?hl=es"
+              className="p-4"
             />
             <SocialMediaLink
               icon={<TwitterIcon className="w-7 h-7" />}
               href="https://x.com/?lang=es"
+              className="p-4"
             />
             <SocialMediaLink
               icon={<LinkedInIcon className="w-7 h-7" />}
               href="https://www.linkedin.com"
+              className="p-4"
             />
             <SocialMediaLink
               icon={<FacebookIcon className="w-7 h-7" />}
               href="https://www.facebook.com/?locale=es_ES"
+              className="p-4"
             />
           </div>
         </div>
@@ -94,17 +98,17 @@ export default function Contact() {
             <div className="w-1/2 flex items-baseline flex-col gap-6">
                 <ContactItem
                 text="info@plugin.com"
-                icon={<MailIcon className="text-black" />}
+                icon={<MailIcon className="text-black w-6 h-6" />}
                 classname="text-black text-xl"
                 />
                 <ContactItem
                 text="Dirección oficinas Plug In "
-                icon={<MapPinIcon className="text-black" />}
+                icon={<MapPinIcon className="text-black w-6 h-6" />}
                 classname="text-black text-xl"
                 />
                 <ContactItem
                 text="+34 123456789"
-                icon={<PhoneIcon className="text-black" />}
+                icon={<PhoneIcon className="text-black w-6 h-6" />}
                 classname="text-black text-xl"
                 />
           </div>
@@ -112,18 +116,22 @@ export default function Contact() {
             <SocialMediaLink
               icon={<InstagramIcon className="w-7 h-7" />}
               href="https://www.instagram.com/?hl=es"
+              className="p-4"
             />
             <SocialMediaLink
               icon={<TwitterIcon className="w-7 h-7" />}
               href="https://x.com/?lang=es"
+              className="p-4"
             />
             <SocialMediaLink
               icon={<LinkedInIcon className="w-7 h-7" />}
               href="https://www.linkedin.com"
+              className="p-4"
             />
             <SocialMediaLink
               icon={<FacebookIcon className="w-7 h-7" />}
               href="https://www.facebook.com/?locale=es_ES"
+              className="p-4"
             />
           </div>
         </div>

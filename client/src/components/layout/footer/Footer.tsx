@@ -27,22 +27,26 @@ export const Footer = () => {
       </section>
       <section className="footerSections">
         <h3 className="footerSectionTitles">Redes</h3>
-        <div className="flex-center items-center flex-1 flex-wrap gap-2">
+        <div className="flex-center items-center lg:flex-1 flex-wrap gap-2 lg:gap-2">
             <SocialMediaLink
-              icon={<InstagramIcon className="w-5 h-5" />}
+              icon={<InstagramIcon className="w-3 lg:w-5 h-3 lg:h-5" />}
               href="https://www.instagram.com/?hl=es"
+              className="p-2 lg:p-4"
               />
             <SocialMediaLink
-              icon={<TwitterIcon className="w-5 h-5" />}
+              icon={<TwitterIcon className="w-3 lg:w-5 h-3 lg:h-5" />}
               href="https://x.com/?lang=es"
+              className="p-2 lg:p-4"
             />
             <SocialMediaLink
-              icon={<LinkedInIcon className="w-5 h-5" />}
+              icon={<LinkedInIcon className="w-3 lg:w-5 h-3 lg:h-5" />}
               href="https://www.linkedin.com"
+              className="p-2 lg:p-4"
             />
             <SocialMediaLink
-              icon={<FacebookIcon className="w-5 h-5" />}
+              icon={<FacebookIcon className="w-3 lg:w-5 h-3 lg:h-5" />}
               href="https://www.facebook.com/?locale=es_ES"
+              className="p-2 lg:p-4"
             />
         </div>
       </section>
