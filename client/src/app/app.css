@@ -152,19 +152,21 @@
 .footerSectionTitles {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.2rem;
 }
 
 .footerDivs {
   display: flex;
+  flex:1;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   align-items: center;
-  gap: 10px;
+  gap: 3px;
 }
 
 .footerLinks {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration:underline;
   color: #163461;
 }

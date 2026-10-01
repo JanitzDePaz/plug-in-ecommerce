@@ -12,7 +12,7 @@ import { FacebookIcon } from "src/components/icons/FacebookIcon";
 export default function Contact() {
   return (
       <section className="flex-1 place-self-center flex-center items-center rounded-2xl">
-        <div className="p-10 flex flex-wrap gap-15 lg:h-130 items-stretch">
+        <div className="p-10 flex flex-wrap gap-15 lg:h-150 items-stretch">
         <div className="h-full w-full lg:w-1/2 flex-center items-center flex-col gap-10 text-center ">
           <h2 className="text-5xl font-semibold">Contacto</h2>
           <p className="hidden lg:block w-3/5 text-2xl mb-10">
