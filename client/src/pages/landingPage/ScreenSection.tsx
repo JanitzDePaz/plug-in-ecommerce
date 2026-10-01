@@ -34,7 +34,6 @@ export const ScreenSection = () => {
               <ScreenDataCards header="Resolución" ref={null} svg="resolution.svg" alt="Resolución icon" value="1920 x 1080 px" />
               <ScreenDataCards header="Panel" ref={null} svg="panel.svg" alt="Panel icon" value="OLED" />
             </div>
-            <div></div>
             <div className="flex flex-col gap-5">
               <p className="text-white text-center text-2xl">Desde 1.399 €</p>
               <LandingPrimaryButton text="Comprar ahora" route="/Tienda" style="" />
@@ -48,6 +47,7 @@ export const ScreenSection = () => {
               autoPlay
               loop
               muted
+              playsInline
             />
             <div className="flex flex-col gap-3 2xl:hidden">
               <p className="text-white text-center text-2xl">Desde 1.399 €</p>
