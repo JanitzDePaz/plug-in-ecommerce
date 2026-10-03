@@ -1,5 +1,6 @@
 import {
   isRouteErrorResponse,
+  Link,
   Links,
   Meta,
   Outlet,
@@ -60,7 +61,7 @@ export function ErrorBoundary({ error }: { error: unknown }) {
     message = error.status === 404 ? "404" : "Error";
     details =
       error.status === 404
-        ? "The requested page could not be found."
+        ? "Recurso no encontrado"
         : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
@@ -68,9 +69,12 @@ export function ErrorBoundary({ error }: { error: unknown }) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
+    <main className="flex-1 flex-center flex-col items-center gap-5">
+      <h1 className="text-9xl font-extrabold">{message}</h1>
+      <p className="text-gray-500">{details}</p>
+      <Link to="/">
+        <button className="text-gray-500 py-2 px-4 rounded-2xl border border-gray-500">Volver al inicio</button>
+      </Link>
       {stack && (
         <pre className="w-full p-4 overflow-x-auto">
           <code>{stack}</code>
