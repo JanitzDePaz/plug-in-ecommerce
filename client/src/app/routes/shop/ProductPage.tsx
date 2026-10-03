@@ -93,7 +93,7 @@ export default function ProductPage() {
               <p className="text-[1.2rem]">{product.longDescription}</p>
               <ul className="flex-1 flex flex-col gap-4 list-disc list-inside">
                 {product.specifications.map((spec, i) => (
-                  <li className="text-[1.2rem]" key={i}>
+                  <li className="text-[1.2rem] text-gray-400" key={i}>
                     {spec}
                   </li>
                 ))}

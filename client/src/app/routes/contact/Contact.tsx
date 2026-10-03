@@ -15,27 +15,27 @@ export default function Contact() {
         <div className="p-10 flex flex-wrap gap-15 lg:h-150 items-stretch">
         <div className="h-full w-full lg:w-1/2 flex-center items-center flex-col gap-10 text-center ">
           <h2 className="text-5xl font-semibold">Contacto</h2>
-          <p className="hidden lg:block w-3/5 text-2xl mb-10">
+          <p className="hidden lg:block w-3/5 text-2xl text-gray-700">
             ¿Tienes alguna duda o quieres llevar tu experiencia de sonido al siguiente nivel? <br />Escríbenos y nos ponemos en contacto contigo al instante.
           </p>
-          <div className="hidden lg:flex items-baseline flex-col gap-6">
+          <div className="hidden lg:flex items-baseline flex-col gap-6 text-gray-700">
             <ContactItem
               text="info@plugin.com"
-              icon={<MailIcon className="text-black" />}
-              classname="text-black text-xl"
+              icon={<MailIcon className="" />}
+              classname="text-xl"
             />
             <ContactItem
-              text="Dirección oficinas Plug In "
-              icon={<MapPinIcon className="text-black" />}
-              classname="text-black text-xl"
+              text="Dirección Plug In "
+              icon={<MapPinIcon />}
+              classname="text-xl"
             />
             <ContactItem
               text="+34 123456789"
-              icon={<PhoneIcon className="text-black" />}
-              classname="text-black text-xl"
+              icon={<PhoneIcon />}
+              classname="text-xl"
             />
           </div>
-          <div className="hidden lg:flex gap-5 mt-auto">
+          <div className="hidden lg:flex gap-5 mt-auto ">
             <SocialMediaLink
               icon={<InstagramIcon className="w-7 h-7" />}
               href="https://www.instagram.com/?hl=es"
