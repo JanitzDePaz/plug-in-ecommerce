@@ -103,9 +103,9 @@ export const CartMenu = () => {
       </Show>
 
       <Show when="signed-out">
-        <p>Registrate y disfruta de tu carrito</p>
+        <p className="text-2xl text-center">Registrate y disfruta de tu carrito</p>
         <SignInButton mode="modal">
-          <button className="py-2 px-4 bg-blue-400 rounded-xl">
+          <button className="mt-5 py-4 px-10 bg-black text-white rounded-full text-xl cursor-pointer">
             Inicia sesión
           </button>
         </SignInButton>
