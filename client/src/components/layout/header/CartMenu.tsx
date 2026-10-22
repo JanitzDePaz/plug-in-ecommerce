@@ -1,13 +1,13 @@
 import { cartStorage } from "src/stores/menuStore";
 import clsx from "clsx";
-import { Show, SignInButton, useUser } from "@clerk/react";
+import { Show, useUser } from "@clerk/react";
 import { useEffect } from "react";
 import { useCart } from "src/api/useCart";
 import trashIcon from "../../../assets/icons/shop/TrashIcon.svg";
-import { ShopButtons } from "src/components/buttons/ShopButtons";
+import { Link } from "react-router";
 
 export const CartMenu = () => {
-  const { cartMenu, cartProducts, setCartProducts, toggleCart } = cartStorage();
+  const { cartMenu, cartProducts, setCartProducts, toggleCart, closeCart } = cartStorage();
   const { getProducts, delProduct, cleanUpCart } = useCart();
   const { user, isLoaded } = useUser();
   useEffect(() => {
@@ -104,11 +104,11 @@ export const CartMenu = () => {
 
       <Show when="signed-out">
         <p className="text-2xl text-center">Registrate y disfruta de tu carrito</p>
-        <SignInButton mode="modal">
-          <button className="mt-5 py-4 px-10 bg-black text-white rounded-full text-xl cursor-pointer">
+        <Link to="/inicio-sesion">
+          <button className="mt-5 py-4 px-10 bg-black text-white rounded-full text-xl cursor-pointer" onClick={() => toggleCart()}>
             Inicia sesión
           </button>
-        </SignInButton>
+        </Link>
       </Show>
     </aside>
   );
