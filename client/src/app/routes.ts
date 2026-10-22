@@ -6,5 +6,6 @@ export default [
     route("detallesDelProducto/:slug", "./routes/shop/ProductPage.tsx"),
     route("contacto", "routes/contact/Contact.tsx"),
     route("inicio-sesion", "routes/auth/InicioSesion.tsx"),
+    route("nosotros", "routes/nosotros/Nosotros.tsx"),
     
 ] satisfies RouteConfig;
