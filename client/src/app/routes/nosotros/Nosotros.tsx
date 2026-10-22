@@ -7,7 +7,7 @@ import { FacebookIcon } from "src/components/icons/FacebookIcon";
 
 export default function Nosotros() {
   return (
-    <div className="flex-1 flex-center items-center flex-col gap-20 md:flex-row p-5">
+    <div className="flex-1 flex-center items-center flex-col gap-5 md:gap-20 md:flex-row p-5">
       <img src={placeholder} alt="" className="w-1/2 lg:w-1/4"/>
       <section className="flex items-center flex-col gap-10 w-9/10 lg:w-1/4">
         <div className="flex flex-col items-center gap-5  text-center">
@@ -23,24 +23,24 @@ export default function Nosotros() {
           <div className="flex-center gap-3 flex-wrap ">
             <div className="flex gap-3">
               <SocialMediaLink
-                icon={<InstagramIcon className="w-7 h-7" />}
+                icon={<InstagramIcon className="w-5 h-5 lg:w-7 lg:h-7" />}
                 href="https://www.instagram.com/?hl=es"
                 className="p-4"
               />
               <SocialMediaLink
-                icon={<TwitterIcon className="w-7 h-7" />}
+                icon={<TwitterIcon className="w-5 h-5 lg:w-7 lg:h-7" />}
                 href="https://x.com/?lang=es"
                 className="p-4"
               />
             </div>
             <div className="flex gap-3">
               <SocialMediaLink
-                icon={<LinkedInIcon className="w-7 h-7" />}
+                icon={<LinkedInIcon className="w-5 h-5 lg:w-7 lg:h-7" />}
                 href="https://www.linkedin.com"
                 className="p-4"
               />
               <SocialMediaLink
-                icon={<FacebookIcon className="w-7 h-7" />}
+                icon={<FacebookIcon className="w-5 h-5 lg:w-7 lg:h-7" />}
                 href="https://www.facebook.com/?locale=es_ES"
                 className="p-4"
               />
