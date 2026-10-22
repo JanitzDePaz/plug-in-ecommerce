@@ -15,7 +15,7 @@ export default function Nosotros() {
             ¿Quienes somos?
           </h2>
           <p className=" text-lg">
-            Plug In somos una empresa dedicada en exclusiva a venta de perifericos, en nuestro catalogo puedes encontrar monitores, auriculares, teclados, ratones y micrófonos
+            Plug In es una empresa dedicada en exclusiva a la venta de perifericos, en nuestro catalogo puedes encontrar monitores, auriculares, teclados, ratones y micrófonos.
           </p>
         </div>
         <div className="flex flex-col gap-5">
