@@ -12,7 +12,7 @@ import { FacebookIcon } from "src/components/icons/FacebookIcon";
 export default function Contact() {
   return (
       <section className="flex-1 place-self-center flex-center items-center rounded-2xl">
-        <div className="p-10 flex flex-wrap gap-15 lg:h-150 items-stretch">
+        <div className="lg:p-10 flex flex-col lg:flex-row items-center gap-15 lg:h-150">
         <div className="h-full w-full lg:w-1/2 flex-center items-center flex-col gap-10 text-center ">
           <h2 className="text-5xl font-semibold">Contacto</h2>
           <p className="hidden lg:block w-3/5 text-2xl text-gray-700">
@@ -60,7 +60,7 @@ export default function Contact() {
         </div>
         <form
           action=""
-          className="w-full lg:w-1/3 h-full flex-center items-center flex-col gap-5"
+          className="w-8/10 lg:w-1/3 h-full flex-center items-center flex-col gap-5"
         >
           <TextInput
             id="nombre"
@@ -84,12 +84,12 @@ export default function Contact() {
             placeholder="Mensaje"
             required
             id=""
-            className="bg-[#f3f3f4] text-[#0d0c22] text-xl placeholder:text-[#9e9ea7] py-3 px-6 border-0 shadow-2xl rounded-lg h-30 w-full resize-none"
+            className="bg-[#f3f3f4] text-[#0d0c22] placeholder:text-[#9e9ea7] py-2 lg:py-4 px-4 lg:px-8 text-lg lg:text-xl border-0 shadow-2xl rounded-lg h-30 w-full resize-none"
           ></textarea>
 
           <button
             type="submit"
-            className="w-fit py-4 px-14 text-xl rounded-full bg-black text-white border mt-auto"
+            className="w-fit py-2 lg:py-4 px-6 lg:px-12 text-lg lg:text-xl rounded-full bg-black text-white border mt-auto"
           >
             Enviar
           </button>
@@ -99,40 +99,45 @@ export default function Contact() {
                 <ContactItem
                 text="info@plugin.com"
                 icon={<MailIcon className="text-black w-6 h-6" />}
-                classname="text-black text-xl"
+                classname="text-black text-lg"
                 />
                 <ContactItem
-                text="Dirección oficinas Plug In "
+                text="Oficinas Plug In "
                 icon={<MapPinIcon className="text-black w-6 h-6" />}
-                classname="text-black text-xl"
+                classname="text-black text-lg"
                 />
                 <ContactItem
                 text="+34 123456789"
                 icon={<PhoneIcon className="text-black w-6 h-6" />}
-                classname="text-black text-xl"
+                classname="text-black text-lg"
                 />
           </div>
-          <div className="w-40 flex flex-wrap lg:hidden gap-5">
+          <div className="w-1/2 flex flex-wrap lg:hidden gap-3">
+          <div className="flex gap-3">
             <SocialMediaLink
-              icon={<InstagramIcon className="w-7 h-7" />}
+              icon={<InstagramIcon className="w-4 h-4" />}
               href="https://www.instagram.com/?hl=es"
-              className="p-4"
+              className="p-2"
             />
             <SocialMediaLink
-              icon={<TwitterIcon className="w-7 h-7" />}
+              icon={<TwitterIcon className="w-4 h-4" />}
               href="https://x.com/?lang=es"
-              className="p-4"
+              className="p-2"
             />
-            <SocialMediaLink
-              icon={<LinkedInIcon className="w-7 h-7" />}
+          </div>
+            <div className="flex gap-3">
+              <SocialMediaLink
+              icon={<LinkedInIcon className="w-4 h-4" />}
               href="https://www.linkedin.com"
-              className="p-4"
+              className="p-2"
             />
             <SocialMediaLink
-              icon={<FacebookIcon className="w-7 h-7" />}
+              icon={<FacebookIcon className="w-4 h-4" />}
               href="https://www.facebook.com/?locale=es_ES"
-              className="p-4"
+              className="p-2"
             />
+            </div>
+            
           </div>
         </div>
         
