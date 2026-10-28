@@ -1,5 +1,5 @@
 import { SocialMediaLink } from "src/components/buttons/SocialMediaLink";
-import placeholder from "../../../assets/icons/PlugInLogo.png";
+import logo from "../../../assets/logos/smallLogo.svg";
 import { InstagramIcon } from "src/components/icons/InstagramIcon";
 import { TwitterIcon } from "src/components/icons/TwitterIcon";
 import { LinkedInIcon } from "src/components/icons/LinkedInIcon";
@@ -8,7 +8,7 @@ import { FacebookIcon } from "src/components/icons/FacebookIcon";
 export default function Nosotros() {
   return (
     <div className="flex-1 flex-center items-center flex-col gap-5 md:gap-20 md:flex-row p-5">
-      <img src={placeholder} alt="" className="w-1/2 lg:w-1/4"/>
+      <img src={logo} alt="" className="w-1/2 lg:w-1/4"/>
       <section className="flex items-center flex-col gap-10 w-9/10 lg:w-1/4">
         <div className="flex flex-col items-center gap-5  text-center">
           <h2 className="text-4xl font-semibold ">

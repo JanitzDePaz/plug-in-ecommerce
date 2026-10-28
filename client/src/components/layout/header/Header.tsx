@@ -4,7 +4,7 @@ import MobileMenu from "./MobileMenu";
 import { searchStorage, cartStorage, menuStorage } from "src/stores/menuStore";
 import clsx from "clsx";
 import { CartMenu } from "./CartMenu";
-import pluginLogo from "../../../assets/icons/PlugInLogo.png"
+import pluginLogo from "../../../assets/logos/largeLogo.svg"
 import searchIcon from "../../../assets/icons/header/Search.svg"
 import closeMenuIcon from "../../../assets/icons/header/CloseMenu.svg"
 import headerMenuIcon from "../../../assets/icons/header/HeaderMenu.svg"
@@ -17,9 +17,9 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex-between items-center border-b-2 border-black max-h-[15vh] relative overflow-x-clip">
+      <header className="flex-between items-center border-b-2 border-black max-h-[15vh] relative overflow-x-clip px-15">
         <Link to="/">
-          <img src={pluginLogo} alt="Logo icon" className="max-h-20"/>
+          <img src={pluginLogo} alt="Logo icon" className="h-20"/>
         </Link>
         <nav className="hidden md:block">
           <ul className="flex md:gap-10 gap-5">
